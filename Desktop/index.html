@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>PizzApi</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo-pizza2.png" />
+    <link rel="stylesheet" href="./Style/style.css" />
+    <script src="https://kit.fontawesome.com/fc4d6d5887.js" crossorigin="anonymous"></script>
+    
+</head>
+
+<body>
+    <header>
+        <img src="img/logo-pizza2.png" alt="Logo Pizza Api" />
+        <div>
+            <img src="img/Profile-Picture.png" alt="Image de profil utilisateur" />
+            <h3>Paul Ipsum</h3>
+        </div>
+        <ul>
+            <li><i id="toggle-list-view" class="fa-solid fa-list"></i></li>
+            <li><i class="fa-solid fa-gauge-high"></i></li>
+            <li><i class="fa-solid fa-chart-pie"></i></li>
+        </ul>
+        <div>
+            <button><a href="#">Quit</a></button>
+        </div>
+    </header>
+
+    <section id="list-view">
+
+        <div >
+            <div class="card liste">
+                <div>
+                    <h2>Liste Pizza</h2>
+                    <button id="toggle-form-button"><i class="fas fa-plus"></i></button>
+                </div>
+                <ul id="liste-container"></ul>
+            </div>
+            <div class="card liste">
+                <div >
+                    <h2>Liste Burger</h2>
+                    <button id="toggle-form-button"><i class="fas fa-plus"></i></button>
+                </div>
+                <ul id="liste-container"></ul>
+                
+            </div>
+            
+        </div>
+        <div id="droite">
+            <div class="card" id="my-div">
+                <h2>Form d'ajout Pizza</h2>
+                <form id="ajout-form">
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <button id="ajout-modif-button"><i class="fas fa-check"></i></button>
+                </form>
+            </div>
+
+            <div class="card" id="my-div">
+                <h2>Form d'ajout Burger</h2>
+                <form id="ajout-form">
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <input type="text" id="element-input" placeholder="Nouvel élément" />
+                    <button id="ajout-modif-button"><i class="fas fa-check"></i></button>
+                </form>
+            </div>
+            <!--<div class="card">
+                <h2>Chart</h2>
+                <div> 
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>-->
+        </div>
+    </section>
+    <!-- script chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 7, 3],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+            responsive: false, // Assurez-vous que la réactivité est désactivée
+            maintainAspectRatio: false, // Désactive le maintien du rapport d'aspect
+    }
+        });
+    </script>
+    <!-- script chart -->
+
+
+    <!-- script reload -->
+    <script>
+        document.getElementById('ajout-form').addEventListener('click', function (event) {
+            event.preventDefault()
+        });
+    </script>
+    <!-- script reload -->
+
+    
+    <!-- script show form -->
+
+    <script>
+        const toggleButton = document.getElementById("toggle-form-button");
+        const myDiv = document.getElementById("my-div");
+
+        toggleButton.addEventListener("click", () => {
+            const divOpacity = myDiv.style.opacity;
+            if (divOpacity === "0") {
+                myDiv.style.opacity = "1";
+                toggleFormButton.innerHTML = '<i class="fas fa-minus"></i>';
+            } else {
+                myDiv.style.opacity = "0";
+                toggleFormButton.innerHTML = '<i class="fas fa-plus"></i>';
+            }
+        });
+    </script>
+    <!-- script show form -->   
+
+    <script src="./index.js"></script>
+    
+</body>
+
+</html>

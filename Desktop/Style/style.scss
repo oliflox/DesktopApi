@@ -1,0 +1,221 @@
+// ---------------------- Début Variable ----------------------
+@font-face {
+  font-family: 'ArchivoBlack-Regular';
+  src: url("../font/ArchivoBlack-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'Outfit-Regular';
+  src: url("../font/Outfit-Regular.ttf");
+}
+
+h1,
+h2,
+h3 {
+  font-family: "ArchivoBlack-Regular";
+}
+
+*{
+font-family: "Outfit-Regular";
+}
+
+$blue: #B3DFEC;
+$darkblue: #84AABE;
+
+
+// ---------------------- Fin Variable ----------------------
+
+
+// ---------------------- Début Commun ----------------------
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+button {
+  font-size: 15px;
+  border: none;
+  color: white;
+  padding: 10px 13px;
+  border-radius: 5px;
+  background-color: $darkblue;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+  }
+
+  &>a {
+    color: white;
+  }
+}
+
+.modify-button {
+  background-color: $blue;
+}
+
+.delete-button {
+  background-color: $darkblue;
+}
+
+.card {
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.10);
+}
+
+
+// ---------------------- Fin Commun ----------------------
+
+
+// ---------------------- Début body ----------------------
+
+
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 15vw;
+  height: 100vh;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.035);
+
+  &>img {
+    width: 50px;
+  }
+
+  &>div { 
+    text-align: center;
+
+    &>img {
+      width: 100px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  &>ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 0;
+
+    &>li {
+      display: flex;
+      color: $blue;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+    }
+  }
+
+}
+
+#title {
+  margin-left: 15vw;
+  color: $blue;
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+  h1{
+    margin: 0;
+  }
+}
+
+section {
+  margin-left: 15vw;
+  padding:25px 50px;
+  display: flex;
+  gap: 50px;
+  &>div {
+    width: 50%;
+    display: flex;
+    flex-direction: column; 
+    height: fit-content;
+    gap: 30px ;
+    h2 {
+      color: $darkblue;
+    }
+    &>div{
+      &>ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px 0 0 0;
+  
+        &>li {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          &>div {
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+.liste {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+}
+
+#droite{
+  gap: 30px;
+& > div{
+  & > form{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+    flex-direction: column;
+    & > input{
+      background-color: #e9e9e9;
+      padding: 8px 15px;
+      border: 0;
+      border-radius: 8px;
+    }
+    & > button#ajout-modif-button{
+      align-self: flex-end;
+      border-radius: 10px;
+    }
+  }
+}
+
+}
+
+// ---------------------- Fin body ----------------------

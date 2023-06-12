@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "Api"
+		},
+		{
+			"path": "Desktop"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Desktop"
+	}
+}
